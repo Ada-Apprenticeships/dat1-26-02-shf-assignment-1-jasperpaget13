@@ -15,7 +15,7 @@ WHERE next_maintenance_date >= '2025-01-01'
 ORDER BY next_maintenance_date;
 
 -- 3.2 
--- GROUP BY is used to aggregate equipment by type.
+-- GROUP BY is used to sort equipment by type.
 SELECT 
     type AS equipment_type,
     COUNT(*) AS count

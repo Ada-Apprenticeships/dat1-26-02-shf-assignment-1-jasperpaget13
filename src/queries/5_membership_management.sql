@@ -31,7 +31,7 @@ GROUP BY memberships.type;
 
 -- 5.3 
 -- strftime('%Y',) extracts the year from a date stored as text
--- Filtering by year allowsme to identfy memberships ending within a specific calendar year.
+-- Filtering by year allows me to identfy memberships ending within a specific calendar year.
 SELECT 
     members.member_id,
     members.first_name,

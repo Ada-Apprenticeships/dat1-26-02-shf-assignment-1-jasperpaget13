@@ -25,7 +25,7 @@ FROM members;
 
 -- 1.4
 -- INNER JOIN ensures only members with attendance records are included.
--- GROUP BY aggregates registrations per member.
+-- GROUP BY sorts registrations per member.
 -- ORDER BY DESC with LIMIT 1 returns the top attendee.
 SELECT m.member_id AS member_id,
        m.first_name,
