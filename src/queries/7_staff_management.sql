@@ -3,7 +3,6 @@
 
 -- 7.1 
 -- Ordering by position groups staff by role, improving readability and clarity.
--- Renaming position to role makes the output more user-friendly without changing the schema.
 SELECT 
     staff_id,
     first_name,

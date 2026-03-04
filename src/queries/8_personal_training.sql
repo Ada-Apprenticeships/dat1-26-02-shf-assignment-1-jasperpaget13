@@ -3,7 +3,6 @@
 
 -- 8.1 
 -- Filtering by instructor name isolates sessions led by a specific trainer.
--- Ordering by session_date provides a chronological view of sessions.
 SELECT 
     personal_training_sessions.session_id,
     members.first_name || ' ' || members.last_name AS member_name,

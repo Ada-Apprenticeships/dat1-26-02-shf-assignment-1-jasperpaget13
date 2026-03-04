@@ -3,9 +3,8 @@
 
 
 -- 3.1 
--- A date range is used instead of BETWEEN to create a precise 30-day window.
+-- A date range is used instead of BETWEEN to create a 30-day window.
 -- SQLite’s date() function ensures a proper date without manual calculation.
--- Ordering by date makes the upcoming maintenance schedule easier to read.
 SELECT 
     equipment_id,
     name,
@@ -17,7 +16,6 @@ ORDER BY next_maintenance_date;
 
 -- 3.2 
 -- GROUP BY is used to aggregate equipment by type.
--- Renaming the column improves readability of the output.
 SELECT 
     type AS equipment_type,
     COUNT(*) AS count

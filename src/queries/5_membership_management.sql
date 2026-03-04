@@ -17,7 +17,7 @@ WHERE memberships.status = 'Active';
 
 -- 5.2 
 -- julianday() is required in SQLite to calculate time differences from datetime values.
--- Multiplying by 24 * 60 converts the difference from days into minutes.
+-- Multiplying by 24 * 60 gets the difference from days into minutes.
 SELECT 
     memberships.type AS membership_type,
     AVG(

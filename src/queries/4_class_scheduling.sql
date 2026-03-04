@@ -2,8 +2,7 @@
 .mode column
 
 -- 4.1 
--- INNER JOINs are used to ensure only scheduled classes with assigned instructors are returned.
--- Ordering by class_id keeps results logically grouped and easy to review.
+-- INNER JOINs are used to get only scheduled classes with assigned instructors are returned.
 SELECT 
     classes.class_id,
     classes.name AS class_name,
@@ -17,7 +16,6 @@ ORDER BY classes.class_id;
 
 -- 4.2 
 -- LEFT JOIN ensures classes with zero registrations are still included.
--- GROUP BY schedule_id aggregates attendance per session rather than per class.
 -- Capacity minus COUNT() calculates the remaining availability.
 SELECT 
     classes.class_id,
@@ -35,7 +33,7 @@ GROUP BY class_schedule.schedule_id
 ORDER BY class_schedule.start_time;
 
 -- 4.3 
--- Filtering by class_id and date ensures the registration targets the correct session.
+-- Filtering by class_id and date ensures the registration gets the correct session.
 INSERT INTO class_attendance (schedule_id, member_id, attendance_status)
 SELECT class_schedule.schedule_id, 11, 'Registered'
 FROM class_schedule
